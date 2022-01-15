@@ -1,0 +1,15 @@
+# docker-compose.yml
+
+version: "3.4"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: deployment-config/Dockerfile
+    environment:
+      - NODE_ENV=production
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
